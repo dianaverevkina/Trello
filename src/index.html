@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trello</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="trello">
+      <div class="trello__container">
+        <div class="trello__column list">
+          <h2 class="list__name">TO DO</h2>
+          <ul class="list__items">
+            <li class="list__item task">
+              <div class="task__text">Welcome to Trello!</div>
+            </li>
+            <li class="list__item task">
+              <div class="task__text">This is a card</div>
+              <div class="task__icons">
+                <div class="task__like">
+                  <img src="./images/right-arrow.svg" alt="" class="task__like-icon">
+                </div>
+                <div class="task__more">
+                  <img src="./images/calendar.jpg" alt="" class="task__more-icon">
+                </div>
+              </div>
+              <button type="button" class="task__delete"> 
+                
+                <img src="./images/cross.svg" alt="" class="task__delete-icon">
+              </button>
+            </li>
+            <li class="list__item task">
+              <div class="task__text">Drag people onto a card to indicate that they are responsible for it.</div>
+            </li>
+            <li class="list__item task">
+              <div class="task__text"></div>
+            </li>
+            <li class="task__add">
+              <textarea name="add-task" class="task__input input__add-task" placeholder="Enter a title for this card..."></textarea>
+              <div class="task__buttons">
+                <button type="button" class="task__button-add">
+                  Add card
+                </button>
+                <button type="button" class="task__button-cancel">
+                  <img src="./images/cross.svg" alt="" class="task__btn-cancel-icon">
+                </button>
+              </div>
+            </li>
+          </ul>
+          <button type="button" class="list__button-add">
+            <span class="list__button-icon">
+              <img src="./images/add-icon.svg" alt="">
+            </span>
+            <span class="list__button-text">Add another cart</span>
+          </button>
+        </div>
+        <div class="trello__column list">
+          <h2 class="list__name">IN PROGRESS</h2>
+          <ul class="list__items">
+            <li class="list__item task">
+              <div class="task__text">Invite your team to tis board using the Add Members button</div>
+            </li>
+            <li class="list__item task">
+              <div class="task__text">Drag people onto a card to indicate that they are responsible for it.</div>
+            </li>
+            <li class="list__item task">
+              <div class="task__text">Drag people onto a card to indicate that they are responsible for it.</div>
+            </li>
+          </ul>
+          <button type="button" class="list__button-add">
+            <span class="list__button-icon">
+              <img src="./images/add-icon.svg" alt="">
+            </span>
+            <span class="list__button-text">Add another cart</span>
+          </button>
+        </div>
+        <div class="trello__column list">
+          <h2 class="list__name">DONE</h2>
+          <ul class="list__items">
+            <li class="list__item task">
+              <div class="task__text">Drag people onto a card to indicate that they are responsible for it.</div>
+            </li>
+            <li class="list__item task">
+              <div class="task__text">Drag people onto a card to indicate that they are responsible for it.</div>
+            </li>
+            <li class="list__item task">
+              <div class="task__text">Drag people onto a card to indicate that they are responsible for it.</div>
+            </li>
+          </ul>
+          <button type="button" class="list__button-add">
+            <span class="list__button-icon">
+              <img src="./images/add-icon.svg" alt="">
+            </span>
+            <span class="list__button-text">Add another cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
