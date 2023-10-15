@@ -72,6 +72,8 @@ export default class Widget {
     this.dragOffsetX = e.clientX - this.draggedTask.getBoundingClientRect().left;
     this.dragOffsetY = e.clientY - this.draggedTask.getBoundingClientRect().top;
 
+    document.body.style.cursor = 'grabbing';
+
     this.moveTask(e);
 
     this.draggedTask.classList.add('task_dragged');
@@ -79,7 +81,6 @@ export default class Widget {
     document.documentElement.addEventListener('mouseup', this.onMouseUp);
     document.documentElement.addEventListener('mousemove', this.onMouseMove);
   }
-
 
   // Перемещаем карточку
   onMouseMove(e) {
@@ -122,6 +123,8 @@ export default class Widget {
     this.draggedTask.classList.remove('task_dragged');
     this.draggedTask.style.top = 0;
     this.draggedTask.style.left = 0;
+
+    document.body.style.cursor = 'default';
 
     const list = this.draggedTask.closest('.list');
     const listName = list.getAttribute('data-name');
