@@ -45,6 +45,7 @@ export default class App {
     this.listsBtns = this.container.querySelectorAll('.list__button-add');
   }
 
+  // Создаем блок для добавления новой задачи
   drawFieldForTask() {
     const block = document.createElement('div');
     block.classList.add('list__block-add');
@@ -63,6 +64,7 @@ export default class App {
     return block;
   }
 
+  // Создаем HTML элемент задачи
   drawTaskElement(text, id) {
     const task = document.createElement('li');
     task.classList.add('list__item', 'task');
