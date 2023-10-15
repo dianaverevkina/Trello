@@ -10,4 +10,3 @@ app.bindToDOM();
 const savedTasks = new SavedTasks(localStorage);
 const widget = new Widget(app, savedTasks);
 widget.loadTasks();
-// console.log(ticketWidget);
