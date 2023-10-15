@@ -4,11 +4,14 @@
 $ff: 'Roboto', sans-serif;
 $fs: 1rem;
 $fw: 500;
+$lightGrey: #bdbfcf;
 $grey: #DDDFE7;
 $darkGrey: #646570;
 $black: #000;
 $white: #fff;
+$lightBlue: #b5cee4;
 $darkBlue: #3179BA;
+$green: #008000;
 
 @mixin flexCenter ($direction) {
   display: flex;
@@ -40,7 +43,7 @@ body {
 
 .wrapper {
   min-height: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
   padding: 3rem 1.25rem;
   margin: 0 auto;
   overflow-x: hidden;
@@ -52,9 +55,6 @@ body {
     @include flexStart(row);
     gap: 1rem;
   }
-  // .trello__column
-  &__column {
-  }
 }
 .list {
   flex: 0 1 calc((100% - 2rem) / 3);
@@ -62,18 +62,12 @@ body {
   gap: 1rem;
   background-color: $grey;
   padding: 1rem 1rem 1.5rem 1rem;
-  // .list__name
-  &__name {
-  }
   // .list__items
   &__items {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem 0;
-  }
-  // .list__item
-  &__item {
   }
   // .list__button-add
   &__button-add {
@@ -86,21 +80,22 @@ body {
     border-radius: 0.25rem;
     transition: 0.3s; 
     &:hover {
-      background-color: #bdbfcf;
+      background-color: $lightGrey;
       transition: 0.3s; 
     }
   }
   // .list__button-icon
   &__button-icon {
-    width: 14px;
-    height: 14px;
+    width: 0.875rem;
+    height: 0.875rem;
     & img {
       max-width: 100%;
       object-fit: cover;
     }
   }
-  // .list__button-text
-  &__button-text {
+  //.list__block-add
+  &__block-add {
+    width: 100%;
   }
 }
 .task {
@@ -108,16 +103,22 @@ body {
   background-color: $white;
   border-radius: 0.25rem;
   padding: 1rem;
-  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.16);
-  // cursor: grab;
+  box-shadow: 0px 2px 0px 0px rgba($black, 0.16);
+  &_dragged {
+    position: absolute;
+    width: 100%;
+    max-width: 344px;
+    z-index: 999;
+    pointer-events: none;
+  }
   // .task__text
   &__text {
     margin: 0 0 0.5rem;
   }
   // .task__more
   &__more {
-    width: 12px;
-    height: 12px;
+    width: 0.75rem;
+    height: 0.75rem;
   }
   // .task__more-icon
   &__more-icon {
@@ -125,23 +126,24 @@ body {
   }
   // .task__delete
   &__delete {
-    width: 18px;
-    height: 18px;
+    display: none;
+    width: 1.125rem;
+    height: 1.125rem;
     padding: 4px;
     position: absolute;
     top: 3px;
     right: 3px;
     background-color: #dde4ff;
+    cursor: pointer;
+    &_visible {
+      display: block;
+    }
   }
   // .task__delete-icon
   &__delete-icon {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-  }
-  // .task__add
-  &__add {
-    // width: 100%;
   }
   // .task__buttons
   &__buttons {
@@ -155,10 +157,10 @@ body {
     font-weight: 500;
     color: $white;
     padding: 0.4rem 0.5rem;
-    background-color: green;
+    background-color: $green;
     
     border-radius: 0.25rem;
-    box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 0px 0px rgba($black, 0.3);
     transition: 0.3s;
     &:hover {
       box-shadow: none;
@@ -167,8 +169,8 @@ body {
   }
   // .task__btn-cancel
   &__btn-cancel {
-    width: 14px;
-    height: 14px;
+    width: 0.875rem;
+    height: 0.875rem;
   }
   // .task__btn-cancel-icon
   &__btn-cancel-icon {
@@ -177,7 +179,12 @@ body {
   }
 }
 
-
+.task-placeholder {
+  background-color: $lightBlue;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 3px 0px rgba($darkBlue, 0.5),
+              -2px -2px 3px 0px rgba($darkBlue, 0.5);
+}
 
 // input__add-task
 .input__add-task {
@@ -186,7 +193,7 @@ body {
   resize: none;
   border-radius: 0.25rem;
   padding: 1rem;
-  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 0px 0px rgba($black, 0.16);
   margin: 0 0 0.5rem;
   &::placeholder {
     color: $darkGrey;
